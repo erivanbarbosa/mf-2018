@@ -67,7 +67,7 @@ drwxrwxr-x 2 aluno aluno 4096 Ago 20 21:05 novo-dir
 cd ..
 ### Resultado 8 ###
 <pre>
-Retonardo ao diretorio "/home/aluno"
+Retornou ao diretorio "/home/aluno"
 </pre>
 <hr>
 
