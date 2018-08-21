@@ -125,48 +125,128 @@ Documentos                Música        Público
 </pre>
 <hr>
 
-### Comando ###
+### Comando 12 ###
+less "Hello World"
 
-
-### Resultado ###
+### Resultado 12 ###
 <pre>
-
+Hello World!
+Hello\ World (END)
 </pre>
 <hr>
 
-### Comando ###
-
-
-### Resultado ###
+### Comando 13 ###
+find . -name "Hello World"
+### Resultado 13 ###
 <pre>
-
+./Hello World
 </pre>
 <hr>
 
-### Comando ###
+### Comando 14 ###
+export MEU_NOME=Erivan
 
-
-### Resultado ###
+### Resultado 14 ###
 <pre>
-
+Varivel "MEU_NOME" criada
 </pre>
 <hr>
 
 
-### Comando ###
+### Comando 15 ###
+echo $MEU_NOME
 
-
-### Resultado ###
+### Resultado 15 ###
 <pre>
-
+Erivan
 </pre>
 <hr>
 
-### Comando ###
+### Comando 16 ###
+echo $?
 
-
-### Resultado ###
+### Resultado 16 ###
 <pre>
+0
+</pre>
+<hr>
 
+### Comando 17 ###
+expr 20 + 35
+
+### Resultado 17 ###
+<pre>
+55
+</pre>
+<hr>
+
+### Comando 18 ###
+echo $0
+
+### Resultado 18 ###
+<pre>
+bash
+</pre>
+<hr>
+
+
+### Comando 19 ###
+echo $SHELL
+
+### Resultado 19 ###
+<pre>
+/bin/bash
+</pre>
+<hr>
+
+### Comando 20 ###
+curl http://ifconfig.co
+### Resultado 20 ###
+<pre>
+200.137.197.69
+</pre>
+<hr>
+
+### Comando 21 ###
+curl http://ifconfig.co/country
+
+### Resultado 21 ###
+<pre>
+Brazil
+</pre>
+<hr>
+
+### Comando 22 ###
+curl http://ifconfig.co/city
+
+### Resultado 22 ###
+<pre>
+Senador Canedo (O comando respondeu isso)
+</pre>
+<hr>
+
+
+### Comando 23 ###
+vi
+
+### Resultado 23 ###
+<pre>
+ VIM - Vi IMproved                                
+~                                                                               
+~                               version 7.4.1689                                
+~                           by Bram Moolenaar et al.                            
+~           Modified by pkg-vim-maintainers@lists.alioth.debian.org             
+~                 Vim is open source and freely distributable                   
+~                                                                               
+~                        Help poor children in Uganda!                          
+~                type  :help iccf<Enter>       for information                  
+~                                                                               
+~                type  :q<Enter>               to exit                          
+~                type  :help<Enter>  or  <F1>  for on-line help                 
+~                type  :help version7<Enter>   for version info                 
+~                                                                               
+~                        Running in Vi compatible mode                          
+~                type  :set nocp<Enter>        for Vim defaults                 
+~                type  :help cp-default<Enter> for info on this         
 </pre>
 <hr>
