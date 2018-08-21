@@ -72,10 +72,7 @@ Retonardo ao diretorio "/home/aluno"
 <hr>
 
 ### Comando 9 ###
-<pre>
 ls -lt
-</pre>
-<hr>
 
 ### Resultado 9 ###
 <pre>
