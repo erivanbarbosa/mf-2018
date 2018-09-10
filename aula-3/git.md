@@ -40,29 +40,30 @@
 <p>Os arquivos podem ser adicionados utilizando o comando git add <nome do arquivo> para cada arquivo ou o comando git add * para adicionar automaticamente todos os arquivos.</p>
  <p>O commit pode ser realizado utilizando o comando git commit -m "<mensagem do commit>".</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o comando deve ser executado para identificar o que foi alterado desde o último “commit”? </b></li>
+<p>git diff HEAD^ HEAD</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Em um dado repositório, arquivos simplesmente copiados para lá, ou seja, untracked, podem ser exibidos/identificados com que comando? </b></li>
+<p>git status</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o comando para efetuar um commit? </b></li>
+<p>git commit</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o comando que devemos empregar para descartar mudanças ocorridas no arquivo teste.txt, por exemplo? </b></li>
+<p>git checkout -- file</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> O que deve ser feito para que um determinado diretório do seu repositório seja ignorado pelo Git? Faça uma busca por .gitignore </b></li>
+<p>Deve ser criado um arquivo sem nome com a extensão .gitignore na raiz do repositório e dentro dele devem ser inclusos os nomes do arquivos e/ou diretórios que se deseja excluir do controle de versão.</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> O que acontece se o seu repositório local for acidentalmente removido? </b></li>
+<p>A cópia local do repositório é perdida, porém ainda é possivel clonar novamente o repositório do repositório central.</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Como clonar um repositório remoto? </b></li>
+<p>git clone <url do repositório></p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Em alguns cenários git log pode produzir extensos resultados. Se houver interesse em visualizar o histórico de um repositório, onde cada mudança é fornecida exatamente em uma única linha, qual o comando que deve ser empregado?
+ </b></li>
+<p>git log --pretty=oneline</p>
 
 <li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
 <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
