@@ -65,26 +65,29 @@
  </b></li>
 <p>git log --pretty=oneline</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Em qual arquivo o Git armazena informações de configuração empregadas por usuário?
+ </b></li>
+<p>.gitconfig</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o comando para criar um repositório local? </b></li>
+<p>git init</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o nome do diretório criado pelo Git quando se executa o comando git init?
+ </b></li>
+<p>master</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o comando para adicionar todos os arquivos modificados? (Aqueles para os quais git status identificam como modified?)
+ </b></li>
+<p>git add *</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> O Git faz uso do valor de hash conhecido por SHA1. O que isto significa? Qual o propósito? O que é SHA1? </b></li>
+<p>Embora se argumente frequentemente que SHA1 seja usado para implementar segurança, segundo o próprio criado do git, Linus Torvalds o objetivo é aumentar a consistencia dos commits.</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Qual o nome do arquivo no qual podemos inserir a indicação para o Git de arquivos e diretórios a serem ignorados? </b></li>
+<p>.gitignore</p>
 
-<li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
-<p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+<li><b> Quando se cria o arquivo MinhaClasse.class em um dado diretório e desejamos que arquivos com a extensão .class, como neste caso, sejam ignorados por todos os membros de uma equipe que estão contribuindo com um dado projeto, como devemos proceder? </b></li>
+<p>Adicionamos o texto "*.class" ao arquivo .gitignore</p>
 
 <li><b> AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA </b></li>
 <p>bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
