@@ -1,8 +1,10 @@
 package com.github.kyriosdata.dsr;
 
+import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class DatasusFileReader {
@@ -11,6 +13,19 @@ public class DatasusFileReader {
     	
 
     	ZipInputStream zipInputStream = getZipInputStream(url);
+    	ZipEntry zipEntry = null;
+    	
+    	
+    	 while ((zipEntry = zipInputStream.getNextEntry()) != null) {
+    		 
+    		 
+    	        FileOutputStream fileOutputStream = new FileOutputStream(zipEntry.getName());
+    	        for (int c = zipInputStream.read(); c != -1; c = zipInputStream.read()) {
+    	        	fileOutputStream.write(c);
+    	        }
+    	        zipInputStream.closeEntry();
+    	        fileOutputStream.close();
+    	      }
     	
     	
     	return null;
