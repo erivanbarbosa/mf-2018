@@ -6,21 +6,21 @@
 
 package com.github.kyriosdata.dsr;
 
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Programa que exibe o dia da semana para o dia em que é executado.
- *
- */
+
 public final class ProgramaLeitorEstabelecimentosSaude {
 
     private static final Logger logger =
             LogManager.getLogger(ProgramaLeitorEstabelecimentosSaude.class);
 
-    /**
-     * Restringe criação de instância.
-     */
+
     private ProgramaLeitorEstabelecimentosSaude() {
         // Apenas evita criação de instância.
     }
@@ -29,8 +29,17 @@ public final class ProgramaLeitorEstabelecimentosSaude {
      * Ponto de entrada da aplicação. Apenas para ilustra chamada de método.
      *
      * @param args Ignorados.
+     * @throws MalformedURLException 
      */
-    public static void main(final String[] args) {
+    public static void main(final String[] args) throws Exception {
+    	
+    	String urlString = "https://drive.google.com/uc?authuser=0&id=16Z7qDp38pwtRpmPcDrszeEelZnVskuuk&export=download";
+    			
+    			
+    	URL url = new URL(urlString);
+    	URLConnection conectorURL = url.openConnection();
+    	InputStream inputStream = conectorURL.getInputStream();
+    	
 
         logger.info("iniciado");
         //System.out.println(Calendario.diaDaSemanaParaHoje());;
