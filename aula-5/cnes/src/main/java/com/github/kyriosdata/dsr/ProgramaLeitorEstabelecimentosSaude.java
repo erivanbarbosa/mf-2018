@@ -17,6 +17,8 @@ import org.apache.logging.log4j.Logger;
 
 public final class ProgramaLeitorEstabelecimentosSaude {
 
+	private static final String urlString = "https://drive.google.com/uc?authuser=0&id=16Z7qDp38pwtRpmPcDrszeEelZnVskuuk&export=download";
+	
     private static final Logger logger =
             LogManager.getLogger(ProgramaLeitorEstabelecimentosSaude.class);
 
@@ -32,17 +34,12 @@ public final class ProgramaLeitorEstabelecimentosSaude {
      * @throws MalformedURLException 
      */
     public static void main(final String[] args) throws Exception {
+    	logger.info("iniciado");    	
     	
-    	String urlString = "https://drive.google.com/uc?authuser=0&id=16Z7qDp38pwtRpmPcDrszeEelZnVskuuk&export=download";
-    			
-    			
-    	URL url = new URL(urlString);
-    	URLConnection conectorURL = url.openConnection();
-    	InputStream inputStream = conectorURL.getInputStream();
-    	
+    	DatasusFileReader datasusReader = new DatasusFileReader();
+    	datasusReader.generateEstablishmentResume(urlString);
 
-        logger.info("iniciado");
-        //System.out.println(Calendario.diaDaSemanaParaHoje());;
+        
     }
 
 }
