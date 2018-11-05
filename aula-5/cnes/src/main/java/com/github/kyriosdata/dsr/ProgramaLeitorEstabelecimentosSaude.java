@@ -17,7 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 public final class ProgramaLeitorEstabelecimentosSaude {
 
-	private static final String urlString = "https://drive.google.com/uc?authuser=0&id=16Z7qDp38pwtRpmPcDrszeEelZnVskuuk&export=download";
+	private static final String urlString = "https://drive.google.com/file/d/16Z7qDp38pwtRpmPcDrszeEelZnVskuuk/view?usp=sharing";
 	
     private static final Logger logger =
             LogManager.getLogger(ProgramaLeitorEstabelecimentosSaude.class);

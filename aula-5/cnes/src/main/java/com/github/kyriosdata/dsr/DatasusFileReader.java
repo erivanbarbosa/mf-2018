@@ -28,6 +28,8 @@ public class DatasusFileReader {
 
 	private ZipInputStream getZipInputStream(String url) throws Exception {
 		ZipInputStream zipInputStream = new ZipInputStream(getInputStream(url));
+		
+		int x = zipInputStream.available();
 		zipInputStream = positionateZipInputStream(zipInputStream);
 
 		return zipInputStream;
@@ -45,7 +47,11 @@ public class DatasusFileReader {
 	}
 
 	private InputStream getInputStream(String url) throws Exception, Exception {
-		return getUrlConnection(url).getInputStream();
+		InputStream inputStream =  getUrlConnection(url).getInputStream();
+		
+		int result = inputStream.available();
+		
+		return inputStream;
 	}
 
 	private URLConnection getUrlConnection(String url) throws Exception {
