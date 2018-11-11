@@ -1,7 +1,19 @@
 package com.github.redesprou.dto;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Date;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlRootElement;
+
+import com.google.gson.Gson;
+
+@XmlRootElement()
 public class IdentificadorDTO {
 	private Long id;
 	private Long individuoId;
@@ -23,6 +35,48 @@ public class IdentificadorDTO {
 	private Long ctpsId;
 	private Long ctpsSerie;
 	private String ctpsEstado;
+
+	public void toXML(String filename) {
+		try {
+			JAXBContext context;
+			context = JAXBContext.newInstance(IdentificadorDTO.class);
+			Marshaller m = context.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			File file = new File("src/main/resources/" + filename + ".xml");
+			m.marshal(this, file);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public IdentificadorDTO fromXML(String filename) {
+		IdentificadorDTO identificador = null;
+		try {
+			File arquivo = new File("src/main/resources/" + filename + ".xml");
+			arquivo.createNewFile();
+			JAXBContext context = JAXBContext.newInstance(IdentificadorDTO.class);
+			Unmarshaller un = context.createUnmarshaller();
+			identificador = (IdentificadorDTO) un.unmarshal(new FileReader(arquivo));
+		} catch (IOException | JAXBException e) {
+			e.printStackTrace();
+		}
+
+		return identificador;
+	}
+
+	public String toJson() {
+		Gson gson = new Gson();
+		String json = gson.toJson(this);
+
+		return json;
+	}
+	
+	public IdentificadorDTO fromJson(String json ) {
+		Gson gson = new Gson();
+		IdentificadorDTO identificador = gson.fromJson(json, IdentificadorDTO.class);
+		
+	    return identificador;
+	}
 
 	public Long getId() {
 		return id;
