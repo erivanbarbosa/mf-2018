@@ -1,5 +1,16 @@
 package com.github.redesprou.dto;
 
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+
+import com.google.gson.Gson;
+
 public class ComunicacaoDTO {
 	private String nomeIndividuo;
 	private String descricaoMeio;
@@ -8,6 +19,49 @@ public class ComunicacaoDTO {
 	private String descricaoUso;
 	private String alternativoUso;
 
+	
+	public void toXML(String filename) {
+		try {
+			JAXBContext context;
+			context = JAXBContext.newInstance(ComunicacaoDTO.class);
+			Marshaller m = context.createMarshaller();
+			m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, Boolean.TRUE);
+			File file = new File("src/main/resources/" + filename + ".xml");
+			m.marshal(this, file);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public ComunicacaoDTO fromXML(String filename) {
+		ComunicacaoDTO comunicacao = null;
+		try {
+			File arquivo = new File("src/main/resources/" + filename + ".xml");
+			arquivo.createNewFile();
+			JAXBContext context = JAXBContext.newInstance(ComunicacaoDTO.class);
+			Unmarshaller un = context.createUnmarshaller();
+			comunicacao = (ComunicacaoDTO) un.unmarshal(new FileReader(arquivo));
+		} catch (IOException | JAXBException e) {
+			e.printStackTrace();
+		}
+
+		return comunicacao;
+	}
+
+	public String toJson() {
+		Gson gson = new Gson();
+		String json = gson.toJson(this);
+
+		return json;
+	}
+
+	public ComunicacaoDTO fromJson(String json) {
+		Gson gson = new Gson();
+		ComunicacaoDTO comunicacao = gson.fromJson(json, ComunicacaoDTO.class);
+
+		return comunicacao;
+	}
+	
 	public String getNomeIndividuo() {
 		return nomeIndividuo;
 	}

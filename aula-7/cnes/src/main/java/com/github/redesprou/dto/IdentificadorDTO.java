@@ -15,25 +15,20 @@ import com.google.gson.Gson;
 
 @XmlRootElement()
 public class IdentificadorDTO {
-	private Long id;
-	private Long individuoId;
+	private Long IndividuoId;
 	private String designacao;
-	private Long areaId;
-	private String alternativo;
-	private String descricao;
-	private String emissor;
-	private Date date;
-	private String tipo;
-	private Long certidaoId;
-	private Long tipoCertidao;
-	private String descricaoCertidao;
-	private String cartorioCertidao;
+	private Boolean alternativoArea;
+	private String descricaoArea;
+	private String descricaoTipoCertidao;
+	private String cartorio;
 	private Long livroCertidao;
 	private Long folhaCertidao;
 	private Long termoCertidao;
-	private Long tituloEleitoralId;
 	private Long zonaTitulo;
 	private Long sessaoTitulo;
+	private String tipoIdentificador;
+	private Date data;
+	private String emissor;
 	private Long ctpsId;
 	private Long ctpsSerie;
 	private String ctpsEstado;
@@ -72,28 +67,20 @@ public class IdentificadorDTO {
 
 		return json;
 	}
-	
-	public IdentificadorDTO fromJson(String json ) {
+
+	public IdentificadorDTO fromJson(String json) {
 		Gson gson = new Gson();
 		IdentificadorDTO identificador = gson.fromJson(json, IdentificadorDTO.class);
-		
-	    return identificador;
-	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+		return identificador;
 	}
 
 	public Long getIndividuoId() {
-		return individuoId;
+		return IndividuoId;
 	}
 
 	public void setIndividuoId(Long individuoId) {
-		this.individuoId = individuoId;
+		IndividuoId = individuoId;
 	}
 
 	public String getDesignacao() {
@@ -104,68 +91,36 @@ public class IdentificadorDTO {
 		this.designacao = designacao;
 	}
 
-	public Long getArea() {
-		return areaId;
+	public Boolean getAlternativoArea() {
+		return alternativoArea;
 	}
 
-	public void setArea(Long area) {
-		this.areaId = area;
+	public void setAlternativoArea(Boolean alternativoArea) {
+		this.alternativoArea = alternativoArea;
 	}
 
-	public String getEmissor() {
-		return emissor;
+	public String getDescricaoArea() {
+		return descricaoArea;
 	}
 
-	public void setEmissor(String emissor) {
-		this.emissor = emissor;
+	public void setDescricaoArea(String descricaoArea) {
+		this.descricaoArea = descricaoArea;
 	}
 
-	public Date getDate() {
-		return date;
+	public String getDescricaoTipoCertidao() {
+		return descricaoTipoCertidao;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDescricaoTipoCertidao(String descricaoTipoCertidao) {
+		this.descricaoTipoCertidao = descricaoTipoCertidao;
 	}
 
-	public String getTipo() {
-		return tipo;
+	public String getCartorio() {
+		return cartorio;
 	}
 
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-
-	public Long getCertidaoId() {
-		return certidaoId;
-	}
-
-	public void setCertidaoId(Long certidaoId) {
-		this.certidaoId = certidaoId;
-	}
-
-	public Long getTipoCertidao() {
-		return tipoCertidao;
-	}
-
-	public void setTipoCertidao(Long tipoCertidao) {
-		this.tipoCertidao = tipoCertidao;
-	}
-
-	public String getDescricaoCertidao() {
-		return descricaoCertidao;
-	}
-
-	public void setDescricaoCertidao(String descricaoCertidao) {
-		this.descricaoCertidao = descricaoCertidao;
-	}
-
-	public String getCartorioCertidao() {
-		return cartorioCertidao;
-	}
-
-	public void setCartorioCertidao(String cartorioCertidao) {
-		this.cartorioCertidao = cartorioCertidao;
+	public void setCartorio(String cartorio) {
+		this.cartorio = cartorio;
 	}
 
 	public Long getLivroCertidao() {
@@ -192,14 +147,6 @@ public class IdentificadorDTO {
 		this.termoCertidao = termoCertidao;
 	}
 
-	public Long getTituloEleitoralId() {
-		return tituloEleitoralId;
-	}
-
-	public void setTituloEleitoralId(Long tituloEleitoralId) {
-		this.tituloEleitoralId = tituloEleitoralId;
-	}
-
 	public Long getZonaTitulo() {
 		return zonaTitulo;
 	}
@@ -214,6 +161,30 @@ public class IdentificadorDTO {
 
 	public void setSessaoTitulo(Long sessaoTitulo) {
 		this.sessaoTitulo = sessaoTitulo;
+	}
+
+	public String getTipoIdentificador() {
+		return tipoIdentificador;
+	}
+
+	public void setTipoIdentificador(String tipoIdentificador) {
+		this.tipoIdentificador = tipoIdentificador;
+	}
+
+	public Date getData() {
+		return data;
+	}
+
+	public void setData(Date data) {
+		this.data = data;
+	}
+
+	public String getEmissor() {
+		return emissor;
+	}
+
+	public void setEmissor(String emissor) {
+		this.emissor = emissor;
 	}
 
 	public Long getCtpsId() {
@@ -240,29 +211,4 @@ public class IdentificadorDTO {
 		this.ctpsEstado = ctpsEstado;
 	}
 
-	public Long getAreaId() {
-		return areaId;
-	}
-
-	public void setAreaId(Long areaId) {
-		this.areaId = areaId;
-	}
-
-	public String getAlternativo() {
-		return alternativo;
-	}
-
-	public void setAlternativo(String alternativo) {
-		this.alternativo = alternativo;
-	}
-
-	public String getDescricao() {
-		return descricao;
-	}
-
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
-	}
-	
-	
 }
