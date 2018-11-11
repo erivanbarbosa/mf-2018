@@ -18,7 +18,9 @@ public class IdentificadorDTO {
 	private Long id;
 	private Long individuoId;
 	private String designacao;
-	private Long area;
+	private Long areaId;
+	private String alternativo;
+	private String descricao;
 	private String emissor;
 	private Date date;
 	private String tipo;
@@ -103,11 +105,11 @@ public class IdentificadorDTO {
 	}
 
 	public Long getArea() {
-		return area;
+		return areaId;
 	}
 
 	public void setArea(Long area) {
-		this.area = area;
+		this.areaId = area;
 	}
 
 	public String getEmissor() {
@@ -237,4 +239,30 @@ public class IdentificadorDTO {
 	public void setCtpsEstado(String ctpsEstado) {
 		this.ctpsEstado = ctpsEstado;
 	}
+
+	public Long getAreaId() {
+		return areaId;
+	}
+
+	public void setAreaId(Long areaId) {
+		this.areaId = areaId;
+	}
+
+	public String getAlternativo() {
+		return alternativo;
+	}
+
+	public void setAlternativo(String alternativo) {
+		this.alternativo = alternativo;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	
+	
 }
