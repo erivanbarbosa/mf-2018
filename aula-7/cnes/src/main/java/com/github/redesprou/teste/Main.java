@@ -1,4 +1,6 @@
-package com.github.redesprou.dto;
+package com.github.redesprou.teste;
+
+import com.github.redesprou.dto.IdentificadorDTO;
 
 public class Main {
 	

@@ -1,0 +1,57 @@
+{
+	"$id": "https://github.com/erivanbarbosa/mf-2018",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Endereco",
+	"type": "object",
+	"properties": {
+		"individuoNome": {
+			"type": "string"
+		},
+		"designacao": {
+			"type": "string"
+		},
+		"alternativoArea": {
+			"type": "boolean"
+		},
+		"descricaoArea": {
+			"type": "string"
+		},
+		"descricaoTipoCertidao": {
+			"type": "string"
+		},
+		"cartorio": {
+			"type": "string"
+		},
+		"livroCertidao": {
+			"type": "number"
+		},
+		"folhaCertidao": {
+			"type": "number"
+		},
+		"termoCertidao": {
+			"type": "number"
+		},
+		"zonaTitulo": {
+			"type": "number"
+		},
+		"sessaoTitulo": {
+			"type": "number"
+		},
+		"tipoIdentificador": {
+			"type": "string"
+		},
+		"data": {
+			"type": "string",
+			"format": "date"
+		},
+		"emissor": {
+			"type": "string"
+		},
+		"ctpsSerie": {
+			"type": "number"
+		},
+		"ctpsEstado": {
+			"type": "string"
+		}
+	}
+}
