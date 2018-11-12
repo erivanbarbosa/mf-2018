@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://github.com/erivanbarbosa/mf-2018"
+xmlns="https://github.com/erivanbarbosa/mf-2018"
+elementFormDefault="qualified">
+
+<xs:element name="DadoDemograficoDTO">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="individuoNome" type="xs:string"/>
+      <xs:element name="dataNascimento" type="xs:date"/>
+      <xs:element name="nascimentoAcuracia" type="xs:date"/>
+      <xs:element name="nascimentoSeguimentoDescricao" type="xs:string"/>
+      <xs:element name="nascimentoPluralidadeDescricao" type="xs:string"/>
+      <xs:element name="nascimentoOrdemDescricao" type="xs:string"/>
+      <xs:element name="dataObito" type="xs:date"/>
+      <xs:element name="obitoAcuracia" type="xs:string"/>
+      <xs:element name="obitoFonteDescricao" type="xs:string"/>
+      <xs:element name="sexoDescricao" type="xs:string"/>
+      <xs:element name="isSexoAlternativo" type="xs:boolean"/>
+      <xs:element name="maeNome" type="xs:string"/>
+      <xs:element name="paiNome" type="xs:string"/>
+      <xs:element name="situacaoFamiliarDescricao" type="xs:string"/>
+      <xs:element name="racaDescricao" type="xs:string"/>
+      <xs:element name="comentario" type="xs:string"/>
+      <xs:element name="nacionalidadeDescricao" type="xs:string"/>
+      <xs:element name="municipioNome" type="xs:string"/>
+      <xs:element name="municipioEstadoSigla" type="xs:string"/>
+      <xs:element name="estadoNome" type="xs:string"/>
+      <xs:element name="paisNome" type="xs:string"/>
+      <xs:element name="dataEntradaPais" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

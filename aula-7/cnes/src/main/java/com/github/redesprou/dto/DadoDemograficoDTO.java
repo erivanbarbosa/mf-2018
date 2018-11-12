@@ -21,7 +21,7 @@ public class DadoDemograficoDTO {
 	private String nascimentoOrdemDescricao;
 	private Date dataObito;
 	private String obitoAcuracia;
-	private String obritoFonteDescricao;
+	private String obitoFonteDescricao;
 	private String sexoDescricao;
 	private Boolean isSexoAlternativo;
 	private String maeNome;
@@ -144,11 +144,11 @@ public class DadoDemograficoDTO {
 	}
 
 	public String getObritoFonteDescricao() {
-		return obritoFonteDescricao;
+		return obitoFonteDescricao;
 	}
 
 	public void setObritoFonteDescricao(String obritoFonteDescricao) {
-		this.obritoFonteDescricao = obritoFonteDescricao;
+		this.obitoFonteDescricao = obritoFonteDescricao;
 	}
 
 	public String getSexoDescricao() {

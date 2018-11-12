@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://github.com/erivanbarbosa/mf-2018"
+xmlns="https://github.com/erivanbarbosa/mf-2018"
+elementFormDefault="qualified">
+
+<xs:element name="NomeDTO">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="nomes" type="xs:string"/>
+      <xs:element name="sobrenomes" type="xs:string"/>
+      <xs:element name="sufixos" type="xs:string"/>
+      <xs:element name="nomePreferido" type="xs:string"/>
+      
+      <xs:element name="usoCondicionalDescricao" type="xs:string"/>
+      <xs:element name="usoNomeDescricao" type="xs:string"/>
+      <xs:element name="isNomeAlternativo" type="xs:boolean"/>
+      <xs:element name="dataInicial" type="xs:date"/>
+      <xs:element name="dataFinal" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>
