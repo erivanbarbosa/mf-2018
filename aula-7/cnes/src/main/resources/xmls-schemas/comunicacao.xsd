@@ -1,10 +1,7 @@
 <?xml version="1.0"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-targetNamespace="https://github.com/erivanbarbosa/mf-2018"
-xmlns="https://github.com/erivanbarbosa/mf-2018"
-elementFormDefault="qualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-<xs:element name="comunicacaoDTO">
+<xs:element name="comunicacao">
   <xs:complexType>
     <xs:sequence>
       <xs:element name="nomeIndividuo" type="xs:string"/>
