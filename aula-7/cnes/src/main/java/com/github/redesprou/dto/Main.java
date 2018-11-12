@@ -4,7 +4,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		IdentificadorDTO identificadorDTO = new IdentificadorDTO();
-		identificadorDTO.setIndividuoId(1l);
+		identificadorDTO.setIndividuoNome("Joao");
 		identificadorDTO.setCartorio("antonio do pedro");
 		
 		//identificadorDTO.toXML("identificadorX");

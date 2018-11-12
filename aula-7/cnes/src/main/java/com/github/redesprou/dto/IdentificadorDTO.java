@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 
 @XmlRootElement()
 public class IdentificadorDTO {
-	private Long IndividuoId;
+	private String individuoNome;
 	private String designacao;
 	private Boolean alternativoArea;
 	private String descricaoArea;
@@ -29,7 +29,6 @@ public class IdentificadorDTO {
 	private String tipoIdentificador;
 	private Date data;
 	private String emissor;
-	private Long ctpsId;
 	private Long ctpsSerie;
 	private String ctpsEstado;
 
@@ -75,12 +74,12 @@ public class IdentificadorDTO {
 		return identificador;
 	}
 
-	public Long getIndividuoId() {
-		return IndividuoId;
+	public String getIndividuoNome() {
+		return individuoNome;
 	}
 
-	public void setIndividuoId(Long individuoId) {
-		IndividuoId = individuoId;
+	public void setIndividuoNome(String individuoNome) {
+		this.individuoNome = individuoNome;
 	}
 
 	public String getDesignacao() {
@@ -185,14 +184,6 @@ public class IdentificadorDTO {
 
 	public void setEmissor(String emissor) {
 		this.emissor = emissor;
-	}
-
-	public Long getCtpsId() {
-		return ctpsId;
-	}
-
-	public void setCtpsId(Long ctpsId) {
-		this.ctpsId = ctpsId;
 	}
 
 	public Long getCtpsSerie() {
