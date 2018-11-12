@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"
+xsi:schemaLocation="/xmls-schemas/comunicacao.xsd"?>
+<comunicacaoDTO>
+    <alternativoMeio>alternativoMeio</alternativoMeio>
+    <alternativoUso>alternativoUso</alternativoUso>
+    <descricaoMeio>descricao Meio</descricaoMeio>
+    <descricaoPreferencia>descricao Preferencia</descricaoPreferencia>
+    <nomeIndividuo>Joao</nomeIndividuo>
+</comunicacaoDTO>

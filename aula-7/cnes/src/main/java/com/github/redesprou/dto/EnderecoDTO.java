@@ -9,9 +9,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import com.google.gson.Gson;
 
+@XmlRootElement()
 public class EnderecoDTO {
 	private String individuoNome;
 	private String bairro;
