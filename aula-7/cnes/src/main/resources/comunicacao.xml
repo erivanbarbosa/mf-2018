@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comunicacao>
+	<nomeIndividuo>Joao</nomeIndividuo>
+    <descricaoMeio>descricao Meio</descricaoMeio>
+    <alternativoMeio>alternativoMeio</alternativoMeio>
+    <descricaoPreferencia>descricao Preferencia</descricaoPreferencia>
+    <descricaoUso>descricao Uso</descricaoUso>
+    <alternativoUso>alternativoUso</alternativoUso>
+    
+    
+</comunicacao>

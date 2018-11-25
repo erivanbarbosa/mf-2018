@@ -1,0 +1,77 @@
+{
+	"$id": "https://github.com/erivanbarbosa/mf-2018",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Endereco",
+	"type": "object",
+	"properties": {
+		"individuoNome": {
+			"type": "string"
+		},
+		"dataNascimento": {
+			"type": "string",
+			"format": "date"
+		},
+		"nascimentoAcuracia": {
+			"type": "string"
+		},
+		"nascimentoSeguimentoDescricao": {
+			"type": "string"
+		},
+		"nascimentoPluralidadeDescricao": {
+			"type": "string"
+		},
+		"nascimentoOrdemDescricao": {
+			"type": "string"
+		},
+		"dataObito": {
+			"type": "number",
+			"format": "date"
+		},
+		"obitoAcuracia": {
+			"type": "string"
+		},
+		"obitoFonteDescricao": {
+			"type": "string"
+		},
+		"sexoDescricao": {
+			"type": "string"
+		},
+		"isSexoAlternativo": {
+			"type": "boolean"
+		},
+		"maeNome": {
+			"type": "string"
+		},
+		"paiNome": {
+			"type": "string"
+		},
+		"situacaoFamiliarDescricao": {
+			"type": "string"
+		},
+		"racaDescricao": {
+			"type": "string"
+		},
+		"comentario": {
+			"type": "string"
+		},
+		"nacionalidadeDescricao": {
+			"type": "string"
+		},
+		"municipioNome": {
+			"type": "string"
+		},
+		"municioEstadoSigla": {
+			"type": "string"
+		},
+		"estadoNome": {
+			"type": "string"
+		},
+		"paisNome": {
+			"type": "string"
+		},
+		"dataEntradaPais": {
+			"type": "string",
+			"format": "date"
+		}
+	}
+}

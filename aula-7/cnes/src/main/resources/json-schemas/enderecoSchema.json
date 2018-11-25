@@ -1,0 +1,55 @@
+{
+	"$id": "https://github.com/erivanbarbosa/mf-2018",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Endereco",
+	"type": "object",
+	"properties": {
+		"individuoNome": {
+			"type": "string"
+		},
+		"bairro": {
+			"type": "string"
+		},
+		"distrito": {
+			"type": "string"
+		},
+		"municipio": {
+			"type": "string"
+		},
+		"estado": {
+			"type": "string"
+		},
+		"pais": {
+			"type": "string"
+		},
+		"linhaEndereco": {
+			"type": "string"
+		},
+		"ordemEndereco": {
+			"type": "number"
+		},
+		"cep": {
+			"type": "string"
+		},
+		"caixaPostal": {
+			"type": "string"
+		},
+		"tipoEndereco": {
+			"type": "string"
+		},
+		"dataInicialAcuracia": {
+			"type": "string"
+		},
+		"dataFinalAcuracia": {
+			"type": "string"
+		},
+		"dataInicial": {
+			"type": "string",
+			"format": "date"
+		},
+		"dataFinal": {
+			"type": "string",
+			"format": "date"
+		}
+	}
+}

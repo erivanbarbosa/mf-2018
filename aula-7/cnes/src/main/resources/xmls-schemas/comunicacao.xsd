@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:element name="comunicacao">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:element name="nomeIndividuo" type="xs:string"/>
+      <xs:element name="descricaoMeio" type="xs:string"/>
+      <xs:element name="alternativoMeio" type="xs:string"/>
+      <xs:element name="descricaoPreferencia" type="xs:string"/>
+      <xs:element name="descricaoUso" type="xs:string"/>
+      <xs:element name="alternativoUso" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
+
+</xs:schema>

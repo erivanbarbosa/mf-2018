@@ -1,0 +1,26 @@
+{
+	"$id": "https://github.com/erivanbarbosa/mf-2018",
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"title": "Nome",
+	"type": "object",
+	"properties": {
+		"nomeIndividuo": {
+			"type": "string"
+		},
+		"descricaoMeio": {
+			"type": "string"
+		},
+		"alternativoMeio": {
+			"type": "string"
+		},
+		"descricaoPreferencia": {
+			"type": "string"
+		},
+		"descricaoUso": {
+			"type": "string"
+		},
+		"alternativoUso": {
+			"type": "string"
+		}
+	}
+}
