@@ -1,7 +1,7 @@
 package com.github.redesprou.loinc;
 
 public class LoincInformation {
-	private Long num;
+	private String num;
 	private String component;
 	private String property;
 	private String timeAspect;
@@ -17,11 +17,11 @@ public class LoincInformation {
 	private String versionFirstReleased;
 	private String versionLastChanged;
 
-	public Long getNum() {
+	public String getNum() {
 		return num;
 	}
 
-	public void setNum(Long num) {
+	public void setNum(String num) {
 		this.num = num;
 	}
 
@@ -136,5 +136,17 @@ public class LoincInformation {
 	public void setVersionLastChanged(String versionLastChanged) {
 		this.versionLastChanged = versionLastChanged;
 	}
+
+	@Override
+	public String toString() {
+		return "LoincInformation [num=" + num + ", component=" + component + ", property=" + property + ", timeAspect="
+				+ timeAspect + ", systemInformation=" + systemInformation + ", scaleType=" + scaleType + ", methodType="
+				+ methodType + ", classInformation=" + classInformation + ", classType=" + classType + ", longName="
+				+ longName + ", shortName=" + shortName + ", externalCopyrightNotice=" + externalCopyrightNotice
+				+ ", status=" + status + ", versionFirstReleased=" + versionFirstReleased + ", versionLastChanged="
+				+ versionLastChanged + "]";
+	}
+	
+	
 
 }

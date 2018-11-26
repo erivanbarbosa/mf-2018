@@ -44,7 +44,7 @@ public class Searcher {
 
 			while (resultado.next()) {
 				loincInformation = new LoincInformation();
-				loincInformation.setNum(resultado.getLong("NUM"));
+				loincInformation.setNum(resultado.getString("NUM"));
 
 				loincInformation.setComponent(resultado.getString("COMPONENT"));
 				loincInformation.setProperty(resultado.getString("PROPERTY"));
