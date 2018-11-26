@@ -14,10 +14,10 @@ public class Searcher {
 		String pesquisaPorNome = "SELECT num, component, property, time_ascpect, system_information, scale_type, method_type, class_information, "
 				+ "	class_type, long_name, short_name, external_copyright_notice, status, version_first_released, version_last_changed "
 				+ " FROM loinc_core "
-				+ " WHERE UPPER(num) like ? OR UPPER(component) like ? OR UPPER(property) like ? OR UPPER(time_aspect like ? "
-				+ " OR UPPER(system_information) like ? OR UPPER(scale_type like) ? OR UPPER(method_type like) ? " 
-				+ " OR UPPER(class_information) like ? OR UPPER(long_name) like ?  OR UPPER(short_name like) ? "
-				+ " OR UPPER(external_copyright_notice like) ? OR UPPER(status like) ? OR UPPER(version_first_released like) ? "
+				+ " WHERE UPPER(component) like ? OR UPPER(property) like ? OR UPPER(TIME_ASCPECT) like ? "
+				+ " OR UPPER(system_information) like ? OR UPPER(scale_type) like ? OR UPPER(method_type) like ? " 
+				+ " OR UPPER(class_information) like ? OR UPPER(long_name) like ?  OR UPPER(short_name) like ? "
+				+ " OR UPPER(external_copyright_notice) like ? OR UPPER(status) like ? OR UPPER(version_first_released) like ? "
 				+ " OR UPPER(version_last_changed) like ?";
 		LoincInformation loincInformation = null;
 
@@ -40,7 +40,6 @@ public class Searcher {
 			consulta.setString(11, "%" + searchKeyWord.toUpperCase() + "%");
 			consulta.setString(12, "%" + searchKeyWord.toUpperCase() + "%");
 			consulta.setString(13, "%" + searchKeyWord.toUpperCase() + "%");
-			consulta.setString(14, "%" + searchKeyWord.toUpperCase() + "%");
 			ResultSet resultado = consulta.executeQuery();
 
 			while (resultado.next()) {
@@ -54,7 +53,6 @@ public class Searcher {
 				loincInformation.setScaleType(resultado.getString("SCALE_TYPE"));
 				loincInformation.setMethodType(resultado.getString("METHOD_TYPE"));
 				loincInformation.setClassInformation(resultado.getString("CLASS_INFORMATION"));
-				loincInformation.setClassType(resultado.getInt("CLASS_TYPE"));
 				loincInformation.setLongName(resultado.getString("LONG_NAME"));
 				loincInformation.setShortName(resultado.getString("SHORT_NAME"));
 				loincInformation.setExternalCopyrightNotice(resultado.getString("EXTERNAL_COPYRIGHT_NOTICE"));
