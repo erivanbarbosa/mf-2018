@@ -16,6 +16,9 @@ import java.util.zip.ZipInputStream;
 
 import org.apache.logging.log4j.core.pattern.PatternFormatter;
 
+import com.google.gson.Gson;
+
+
 public class DatasusFileReader {
 	
 	private InputStreamReader inputStreamReader;
@@ -26,12 +29,21 @@ public class DatasusFileReader {
 		ZipInputStream zipInputStream = getZipInputStream(inputStream);
 		inputStreamReader = new InputStreamReader(zipInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-		readBufferedReader(bufferedReader);
+		List<DataSusInformation> list = readBufferedReader(bufferedReader);
+		printJsonInformation(list);
 		System.out.println(bufferedReader.readLine());
 		return null;
 	}
 	
-	private void readBufferedReader(BufferedReader bufferedReader) {
+	private void printJsonInformation(List<DataSusInformation> list) {
+		Gson gson = new Gson();
+		String json = gson.toJson(list);
+
+		System.out.println(json);
+		
+	}
+
+	private List<DataSusInformation> readBufferedReader(BufferedReader bufferedReader) {
 		Pattern pattern = Pattern.compile(";");
 		List<DataSusInformation> informationList = new ArrayList<DataSusInformation>();
 		
@@ -39,10 +51,9 @@ public class DatasusFileReader {
 			String[] x = pattern.split(line);
 			DataSusInformation information = new DataSusInformation(x[0], x[5], x[39], x[40]);
 			informationList.add(information);
-			System.out.println(information);
 		});
 		
-		System.out.println(informationList);
+		return informationList;
 	}
 
 	private URLConnection getUrlConnection(String url) throws Exception {
