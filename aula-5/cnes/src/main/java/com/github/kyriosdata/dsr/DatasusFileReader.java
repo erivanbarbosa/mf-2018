@@ -7,8 +7,14 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
+
+import org.apache.logging.log4j.core.pattern.PatternFormatter;
 
 public class DatasusFileReader {
 	
@@ -20,10 +26,25 @@ public class DatasusFileReader {
 		ZipInputStream zipInputStream = getZipInputStream(inputStream);
 		inputStreamReader = new InputStreamReader(zipInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+		readBufferedReader(bufferedReader);
 		System.out.println(bufferedReader.readLine());
 		return null;
 	}
 	
+	private void readBufferedReader(BufferedReader bufferedReader) {
+		Pattern pattern = Pattern.compile(";");
+		List<DataSusInformation> informationList = new ArrayList<DataSusInformation>();
+		
+		bufferedReader.lines().skip(1).forEach(line -> {
+			String[] x = pattern.split(line);
+			DataSusInformation information = new DataSusInformation(x[0], x[5], x[39], x[40]);
+			informationList.add(information);
+			System.out.println(information);
+		});
+		
+		System.out.println(informationList);
+	}
+
 	private URLConnection getUrlConnection(String url) throws Exception {
 		File file = new File(url);		
 		URL urlObject = file.toURI().toURL();
