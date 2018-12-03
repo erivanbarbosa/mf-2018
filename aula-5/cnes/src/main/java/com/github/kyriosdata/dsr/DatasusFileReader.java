@@ -3,8 +3,11 @@ package com.github.kyriosdata.dsr;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.Writer;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -30,17 +33,19 @@ public class DatasusFileReader {
 		inputStreamReader = new InputStreamReader(zipInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 		List<DataSusInformation> list = readBufferedReader(bufferedReader);
-		printJsonInformation(list);
+		generateJsonFile(list);
 		System.out.println(bufferedReader.readLine());
 		return null;
 	}
 	
-	private void printJsonInformation(List<DataSusInformation> list) {
-		Gson gson = new Gson();
-		String json = gson.toJson(list);
-
-		System.out.println(json);
-		
+	private void generateJsonFile(List<DataSusInformation> list) {
+		   try (Writer writer = new FileWriter("src/main/resources/teste.json")){
+			   Gson gson = new Gson();
+				//String json = gson.toJson(list);
+			   writer.write(gson.toJson(list));
+		    } catch (IOException e) {
+		        e.printStackTrace();
+		    }
 	}
 
 	private List<DataSusInformation> readBufferedReader(BufferedReader bufferedReader) {
