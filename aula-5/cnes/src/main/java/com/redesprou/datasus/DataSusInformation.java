@@ -1,4 +1,4 @@
-package com.github.kyriosdata.dsr;
+package com.redesprou.datasus;
 
 public class DataSusInformation {
 	private String codigo;
