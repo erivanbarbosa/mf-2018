@@ -1,6 +1,7 @@
 package com.github.kyriosdata.dsr;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -10,54 +11,38 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
 public class DatasusFileReader {
+	
+	private InputStreamReader inputStreamReader;
 
 	public Object generateEstablishmentResume(String url) throws Exception {
-
-		InputStreamReader inputStreamReader = getInputStreamReader(url);
+		URLConnection urlConnection = getUrlConnection(url);
+		InputStream inputStream =  urlConnection.getInputStream();
+		ZipInputStream zipInputStream = getZipInputStream(inputStream);
+		inputStreamReader = new InputStreamReader(zipInputStream, "UTF-8");
 		BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-
+		System.out.println(bufferedReader.readLine());
 		return null;
 	}
-
-	private InputStreamReader getInputStreamReader(String url) throws Exception {
-		ZipInputStream zipInputStream = getZipInputStream(url);
-		InputStreamReader inputStreamReader = new InputStreamReader(zipInputStream, "UTF-8");
-
-		return inputStreamReader;
+	
+	private URLConnection getUrlConnection(String url) throws Exception {
+		File file = new File(url);		
+		URL urlObject = file.toURI().toURL();
+		URLConnection conectorURL = urlObject.openConnection();
+		return conectorURL;
 	}
-
-	private ZipInputStream getZipInputStream(String url) throws Exception {
-		ZipInputStream zipInputStream = new ZipInputStream(getInputStream(url));
-		
-		int x = zipInputStream.available();
+	
+	private ZipInputStream getZipInputStream(InputStream inputStream) throws Exception {
+		ZipInputStream zipInputStream = new ZipInputStream(inputStream);
 		zipInputStream = positionateZipInputStream(zipInputStream);
-
 		return zipInputStream;
 	}
 
 	private ZipInputStream positionateZipInputStream(ZipInputStream zipInputStream) throws Exception {
 		ZipEntry zipEntry = null;
-
 		while ((zipEntry = zipInputStream.getNextEntry()) != null) {
 			if (zipEntry.getName().equals("tbEstabelecimento201808.csv"))
 				return zipInputStream;
 		}
-		
 		throw new FileNotFoundException();
-	}
-
-	private InputStream getInputStream(String url) throws Exception, Exception {
-		InputStream inputStream =  getUrlConnection(url).getInputStream();
-		
-		int result = inputStream.available();
-		
-		return inputStream;
-	}
-
-	private URLConnection getUrlConnection(String url) throws Exception {
-		URL urlObject = new URL(url);
-		URLConnection conectorURL = urlObject.openConnection();
-
-		return conectorURL;
-	}
+	}	
 }
